@@ -3,10 +3,11 @@ package hillel;
 import java.io.File;
 
 public class FileData {
-    File file = new File("filename.txt");
-    private long size;
+    public static final String PATH = "C:\\Hillel school\\HillelJavaProHomeWork13";
+    File file = new File(PATH);
+    private long size = 0;
     private  String fileName;
-    private String filePath;
+
 
     public FileData(){
 
@@ -22,13 +23,11 @@ public class FileData {
     }
 
     public long getSize() {
-
-        return file.length();
+        size = file.getName().length();
+        return size;
     }
 
-    public void setSize(long size) {
-        this.size = size;
-    }
+
 
     public String getFileName() {
         return fileName;
@@ -38,14 +37,6 @@ public class FileData {
         this.fileName = fileName;
     }
 
-    public String getFilePath() {
-
-        return file.getAbsolutePath();
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
 
     @Override
     public String toString() {
@@ -53,7 +44,7 @@ public class FileData {
                 "file=" + file +
                 ", size=" + size +
                 ", fileName='" + fileName + '\'' +
-                ", filePath='" + filePath + '\'' +
+                ", filePath='" + PATH + '\'' +
                 '}';
     }
 }
